@@ -1,46 +1,22 @@
-package sistemagestionbibloteca;//Esto es un paquete en el cual esta todo nuestro proyecto, lo usamos para que las clases puedan comunicarse
+package sistemagestionbiblioteca;//Esto es un paquete en el cual esta todo nuestro proyecto, lo usamos para que las clases puedan comunicarse
 
 import java.util.Scanner;//Se importa la clase Scanner
 
 public class Profesor extends Usuario implements Prestamo{//Se crea una clase publica llamada Profesor que hereda de Usuario e implementa la interfaz Prestamo
 
-    private int idProfesor;//Se crea un atributo privado de tipo entero llamado idProfesor
+    public Profesor(String nombre, int edad) {//Se crea un constructor publico que recibe un String nombre, un entero edad y un entero idProfesor
+    
+        super(nombre, edad);//Se manda a llamar al constructor de la clase madre con los parametros nombre y edad
 
-    public Profesor(String nombre, int edad, int idProfesor) {//Se crea un constructor publico que recibe un String nombre, un entero edad y un entero idProfesor
-    
-        super(nombre, edad);//Se manda a llamar al constructor de la clase padre con los parametros nombre y edad
-    
-        this.idProfesor = idProfesor;//Se inicializa el atributo idProfesor con el valor del parametro idProfesor
-    
     }//Fin del constructor
 
     @Override//Indica que el metodo se sobreescribe de la interfaz
     
-    public void consultarMaterial(Libro[] libros, Revista[] revistas, Tesis[] tesis) {//Se crea un metodo publico llamado consultarMaterial que recibe un arreglo de Libros, un arreglo de Revistas y un arreglo de Tesis
-    
-        Scanner scan = new Scanner(System.in);//Se crea un objeto de la clase Scanner llamado scan
-    
-        int idmaterial;//Se crea una variable de tipo entero llamada idmaterial
-    
-        System.out.println("Que tipo de material quieres investigar, ingresa el numero correcto: 1-Libro");//Se imprime un mensaje
-    
-        System.out.println("                                                                     2-Revista");//Se imprime un mensaje
-    
-        System.out.println("                                                                     3-Tesis");//Se imprime un mensaje
-    
-        idmaterial = scan.nextInt();//Se le asigna a la variable idmaterial el valor que se ingrese por teclado
-    
-        while (idmaterial != 1 && idmaterial != 2 && idmaterial != 3) {//Mientras idmaterial sea diferente de 1 y 2 y 3 se ejecutara el ciclo
-    
-            System.out.println("La opcion no es valida volvela a ingresar");//Se imprime un mensaje
-    
-            idmaterial = scan.nextInt();//Se le asigna a la variable idmaterial el valor que se ingrese por teclado
-    
-        }//Fin del ciclo
+    public void consultarMaterial(Libro[] libros, Revista[] revistas, Tesis[] tesis, int idmaterial) {//Se crea un metodo publico llamado consultarMaterial que recibe un arreglo de Libros, un arreglo de Revistas y un arreglo de Tesis
     
         if (idmaterial == 1) {//Si idmaterial es igual a 1 se ejecutara el siguiente bloque de codigo
     
-            System.out.println("Libros disponibles:");//Se imprime un mensaje
+            System.out.println("Libros :");//Se imprime un mensaje
     
             for (int i = 0; i < libros.length; i++) {//Ciclo for que se ejecutara mientras i sea menor al tamaño del arreglo libros
     
@@ -52,7 +28,7 @@ public class Profesor extends Usuario implements Prestamo{//Se crea una clase pu
     
         if (idmaterial == 2) {//Si idmaterial es igual a 2 se ejecutara el siguiente bloque de codigo
     
-            System.out.println("Revistas disponibles:");//Se imprime un mensaje
+            System.out.println("Revistas :");//Se imprime un mensaje
     
             for (int i = 0; i < revistas.length; i++) {//Ciclo for que se ejecutara mientras i sea menor al tamaño del arreglo revistas
     
@@ -64,7 +40,7 @@ public class Profesor extends Usuario implements Prestamo{//Se crea una clase pu
 
         if (idmaterial == 3) {//Si idmaterial es igual a 3 se ejecutara el siguiente bloque de codigo
 
-            System.out.println("Tesis disponibles:");//Se imprime un mensaje
+            System.out.println("Tesis :");//Se imprime un mensaje
 
             for (int i = 0; i < tesis.length; i++) {//Ciclo for que se ejecutara mientras i sea menor al tamaño del arreglo tesis
 
@@ -104,7 +80,7 @@ public class Profesor extends Usuario implements Prestamo{//Se crea una clase pu
 
             boolean hayDisponibles = false;//Se crea una variable de tipo booleano llamada hayDisponibles y se inicializa en false
 
-            System.out.println("Libros disponibles:");//Se imprime un mensaje
+            System.out.println("Libros para llevarse:");//Se imprime un mensaje
 
             for (int i = 0; i < libros.length; i++) {//Ciclo for que se ejecutara mientras i sea menor al tamaño del arreglo libros
 
@@ -120,7 +96,7 @@ public class Profesor extends Usuario implements Prestamo{//Se crea una clase pu
 
             if (!hayDisponibles) {//Si no hay disponibles se ejecutara el siguiente bloque de codigo
 
-                System.out.println("No hay libros disponibles para prestar.");//Se imprime un mensaje
+                System.out.println("No hay libros disponibles para llevarse.");//Se imprime un mensaje
 
                 return;//Se termina el metodo
 
@@ -146,7 +122,7 @@ public class Profesor extends Usuario implements Prestamo{//Se crea una clase pu
 
             boolean hayDisponibles = false;//Se crea una variable de tipo booleano llamada hayDisponibles y se inicializa en false
 
-            System.out.println("Revistas disponibles:");//Se imprime un mensaje
+            System.out.println("Revistas para llevarse:");//Se imprime un mensaje
 
             for (int i = 0; i < revistas.length; i++) {//Ciclo for que se ejecutara mientras i sea menor al tamaño del arreglo revistas
 
@@ -162,7 +138,7 @@ public class Profesor extends Usuario implements Prestamo{//Se crea una clase pu
 
             if (!hayDisponibles) {//Si no hay disponibles se ejecutara el siguiente bloque de codigo
 
-                System.out.println("No hay revistas disponibles para prestar.");//Se imprime un mensaje
+                System.out.println("No hay revistas disponibles para llevarse.");//Se imprime un mensaje
 
                 return;//Se termina el metodo
 
@@ -188,7 +164,7 @@ public class Profesor extends Usuario implements Prestamo{//Se crea una clase pu
 
             boolean hayDisponibles = false;//Se crea una variable de tipo booleano llamada hayDisponibles y se inicializa en false
 
-            System.out.println("Tesis disponibles:");//Se imprime un mensaje
+            System.out.println("Tesis para llevarse:");//Se imprime un mensaje
 
             for (int i = 0; i < tesis.length; i++) {//Ciclo for que se ejecutara mientras i sea menor al tamaño del arreglo tesis
 
@@ -204,7 +180,7 @@ public class Profesor extends Usuario implements Prestamo{//Se crea una clase pu
 
             if (!hayDisponibles) {//Si no hay disponibles se ejecutara el siguiente bloque de codigo
 
-                System.out.println("No hay tesis disponibles para prestar.");//Se imprime un mensaje
+                System.out.println("No hay tesis disponibles para llevarse.");//Se imprime un mensaje
 
                 return;//Se termina el metodo
 
@@ -258,7 +234,7 @@ public class Profesor extends Usuario implements Prestamo{//Se crea una clase pu
         
             boolean hayNoDisponibles = false;//Se crea una variable de tipo booleano llamada hayNoDisponibles y se inicializa en false
         
-            System.out.println("Libros no disponibles:");//Se imprime un mensaje
+            System.out.println("Libros para devolver:");//Se imprime un mensaje
         
             for (int i = 0; i < libros.length; i++) {//Ciclo for que se ejecutara mientras i sea menor al tamaño del arreglo libros
         
@@ -300,7 +276,7 @@ public class Profesor extends Usuario implements Prestamo{//Se crea una clase pu
         
             boolean hayNoDisponibles = false;//Se crea una variable de tipo booleano llamada hayNoDisponibles y se inicializa en false
         
-            System.out.println("Revistas no disponibles:");//Se imprime un mensaje
+            System.out.println("Revistas para devolver:");//Se imprime un mensaje
         
             for (int i = 0; i < revistas.length; i++) {//Ciclo for que se ejecutara mientras i sea menor al tamaño del arreglo revistas
         
@@ -342,7 +318,7 @@ public class Profesor extends Usuario implements Prestamo{//Se crea una clase pu
         
             boolean hayNoDisponibles = false;//Se crea una variable de tipo booleano llamada hayNoDisponibles y se inicializa en false
         
-            System.out.println("Tesis no disponibles:");//Se imprime un mensaje
+            System.out.println("Tesis para devolver:");//Se imprime un mensaje
         
             for (int i = 0; i < tesis.length; i++) {//Ciclo for que se ejecutara mientras i sea menor al tamaño del arreglo tesis
         

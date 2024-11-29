@@ -1,4 +1,4 @@
-package sistemagestionbibloteca;//Esto es un paquete en el cual esta todo nuestro proyecto, lo usamos para que las clases puedan comunicarse
+package sistemagestionbiblioteca;//Esto es un paquete en el cual esta todo nuestro proyecto, lo usamos para que las clases puedan comunicarse
 
 public abstract class MaterialBibliografico {//Se crea una clase abstracta llamada MaterialBibliografico
 
@@ -17,5 +17,25 @@ public abstract class MaterialBibliografico {//Se crea una clase abstracta llama
         this.disponible = disponible;//Se inicializa el atributo disponible con el valor del parametro disponible
     
     }//Fin del constructor
+
+    public boolean isDisponible() {//Se crea un metodo publico de tipo booleano llamado isDisponible
+    
+        return disponible;//Se regresa el valor del atributo disponible
+    
+    }//Fin del metodo
+
+    public void setDisponible(boolean disponible) {//Se crea un metodo publico llamado setDisponible que recibe un boolean disponible
+    
+        this.disponible = disponible;//Se inicializa el atributo disponible con el valor del parametro disponible
+    
+    }//Fin del metodo
+
+    public boolean isNotDisponible() {//Se crea un metodo publico de tipo booleano llamado isNotDisponible
+    
+        return !disponible;//Se regresa el valor contrario del atributo disponible
+    
+    }//Fin del metodo
+
+    public abstract String obtenerInformacion();//Se crea un metodo publico de tipo String llamado obtenerInformacion
 
 }//Fin de la clase MaterialBibliografico

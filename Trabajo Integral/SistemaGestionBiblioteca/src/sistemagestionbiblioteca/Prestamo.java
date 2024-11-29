@@ -1,4 +1,4 @@
-package sistemagestionbibloteca;//Esto es un paquete en el cual esta todo nuestro proyecto, lo usamos para que las clases puedan comunicarse
+package sistemagestionbiblioteca;//Esto es un paquete en el cual esta todo nuestro proyecto, lo usamos para que las clases puedan comunicarse
 
 public interface Prestamo {//Se crea una interfaz publica llamada Prestamo
 

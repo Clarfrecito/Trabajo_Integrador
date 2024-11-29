@@ -1,4 +1,4 @@
-package sistemagestionbibloteca;//Esto es un paquete en el cual esta todo nuestro proyecto, lo usamos para que las clases puedan comunicarse
+package sistemagestionbiblioteca;//Esto es un paquete en el cual esta todo nuestro proyecto, lo usamos para que las clases puedan comunicarse
 
 import java.util.Scanner;//Se importa la clase Scanner
 
@@ -7,7 +7,7 @@ public class Main {//Se crea una clase publica llamada Main
         
         Scanner scan = new Scanner(System.in);//Se crea un objeto de la clase Scanner
         
-        int op = 0, edad = 0, i = 0;//Se crean tres variables de tipo entero y se inicializan en 0
+        int op = 0, edad = 0;//Se crean tres variables de tipo entero y se inicializan en 0
         
         String nombre;//Se crea una variable de tipo String
         
@@ -99,9 +99,7 @@ public class Main {//Se crea una clase publica llamada Main
         
         if (op == 1) {//Se crea una condicion que se ejecutara si el valor de op es 1
         
-            i++;//Se incrementa el valor de i
-        
-            Profesor profesor = new Profesor(nombre, edad, i);//Se crea un objeto de la clase Profesor
+            Profesor profesor = new Profesor(nombre, edad);//Se crea un objeto de la clase Profesor
         
             System.out.println("Bienvenido, Profesor " + nombre + ".");//Se imprime un mensaje
         
@@ -131,7 +129,25 @@ public class Main {//Se crea una clase publica llamada Main
         
                     case 1://Caso 1
         
-                        profesor.consultarMaterial(libros, revistas, tesis);//Se manda a llamar al metodo consultarMaterial de la clase Profesor
+                        int idmaterial;//Se crea una variable de tipo entero llamada idmaterial
+    
+                        System.out.println("Que tipo de material quieres investigar, ingresa el numero correcto: 1-Libro");//Se imprime un mensaje
+    
+                        System.out.println("                                                                     2-Revista");//Se imprime un mensaje
+    
+                        System.out.println("                                                                     3-Tesis");//Se imprime un mensaje
+    
+                        idmaterial = scan.nextInt();//Se le asigna a la variable idmaterial el valor que se ingrese por teclado
+                        
+                        while (idmaterial != 1 && idmaterial != 2 && idmaterial != 3) {//Mientras idmaterial sea diferente de 1 y 2 y 3 se ejecutara el ciclo
+    
+                            System.out.println("La opcion no es valida volvela a ingresar");//Se imprime un mensaje
+    
+                            idmaterial = scan.nextInt();//Se le asigna a la variable idmaterial el valor que se ingrese por teclado
+    
+                        }//Fin del ciclo
+                        
+                        profesor.consultarMaterial(libros, revistas, tesis,idmaterial);//Se manda a llamar al metodo consultarMaterial de la clase Profesor
         
                     break;//Se termina el caso
         
@@ -176,10 +192,8 @@ public class Main {//Se crea una clase publica llamada Main
             System.exit(0);//Se finaliza el programa
         
         } else if (op == 2) {//Se crea una condicion que se ejecutara si el valor de op es 2
-        
-            i++;//Se incrementa el valor de i
-        
-            Estudiante estudiante = new Estudiante(nombre, edad, i);//Se crea un objeto de la clase Estudiante
+          
+            Estudiante estudiante = new Estudiante(nombre, edad);//Se crea un objeto de la clase Estudiante
         
             System.out.println("Bienvenido, Estudiante " + nombre + ".");//Se imprime un mensaje
         
@@ -207,8 +221,26 @@ public class Main {//Se crea una clase publica llamada Main
                 switch (op) {//Se inicia un bloque switch que evaluara la variable op
         
                     case 1://Caso 1
-            
-                        estudiante.consultarMaterial(libros, revistas, tesis);//Se manda a llamar al metodo consultarMaterial de la clase Estudiante
+                        
+                        int idmaterial;//Se crea una variable de tipo entero llamada idmaterial
+    
+                        System.out.println("Que tipo de material quieres investigar, ingresa el numero correcto: 1-Libro");//Se imprime un mensaje
+    
+                        System.out.println("                                                                     2-Revista");//Se imprime un mensaje
+    
+                        System.out.println("                                                                     3-Tesis");//Se imprime un mensaje
+    
+                        idmaterial = scan.nextInt();//Se le asigna a la variable idmaterial el valor que se ingrese por teclado
+                        
+                        while (idmaterial != 1 && idmaterial != 2 && idmaterial != 3) {//Mientras idmaterial sea diferente de 1 y 2 y 3 se ejecutara el ciclo
+    
+                            System.out.println("La opcion no es valida volvela a ingresar");//Se imprime un mensaje
+    
+                            idmaterial = scan.nextInt();//Se le asigna a la variable idmaterial el valor que se ingrese por teclado
+    
+                        }//Fin del ciclo
+                        
+                        estudiante.consultarMaterial(libros, revistas, tesis,idmaterial);//Se manda a llamar al metodo consultarMaterial de la clase Estudiante
                 
                     break;//Se termina el caso
         

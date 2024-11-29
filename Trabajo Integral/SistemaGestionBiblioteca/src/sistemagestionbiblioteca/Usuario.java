@@ -1,4 +1,4 @@
-package sistemagestionbibloteca;//Esto es un paquete en el cual esta todo nuestro proyecto, lo usamos para que las clases puedan comunicarse
+package sistemagestionbiblioteca;//Esto es un paquete en el cual esta todo nuestro proyecto, lo usamos para que las clases puedan comunicarse
 
 public abstract class Usuario {//Se crea una clase abstracta llamada Usuario
 
@@ -14,6 +14,6 @@ public abstract class Usuario {//Se crea una clase abstracta llamada Usuario
     
     }//Fin del constructor
 
-    public abstract void consultarMaterial(Libro[] libros, Revista[] revistas, Tesis[] tesis);//Se crea un metodo abstracto llamado consultarMaterial que recibe un arreglo de libros, revistas y tesis
+    public abstract void consultarMaterial(Libro[] libros, Revista[] revistas, Tesis[] tesis, int idmaterial);//Se crea un metodo abstracto llamado consultarMaterial que recibe un arreglo de libros, revistas y tesis
 
 }//Fin de la clase Usuario

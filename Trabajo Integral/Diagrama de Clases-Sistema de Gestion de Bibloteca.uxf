@@ -1,0 +1,46 @@
+<diagram program="umletino" version="15.1"><zoom_level>4</zoom_level><element><id>UMLClass</id><coordinates><x>116</x><y>184</y><w>192</w><h>52</h></coordinates><panel_attributes>/Usuario/
+-
+-String nombre
+-int edad
+-
+public Usuario(String nombre, int edad)
+public abstract void consultarMaterial(Libro[] libros, Revista[] revistas, Tesis[] tesis)</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>584</x><y>180</y><w>192</w><h>56</h></coordinates><panel_attributes>/MaterialBibliografico/
+-
+#String nombre_texto
+#String autor
+#boolean disponible
+-
+public MaterialBibliografico(String nombre_texto, String autor, boolean disponible)
+public boolean isDisponible()
+public void setDisponible(boolean disponible)
+public boolean isNotDisponible()</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLInterface</id><coordinates><x>132</x><y>328</y><w>160</w><h>40</h></coordinates><panel_attributes>Prestamo
+--
+void prestarMaterial(Libro[] libros, Revista[] revistas, Tesis[] tesis)
+void devolverMaterial(Libro[] libros, Revista[] revistas, Tesis[] tesis)</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>468</x><y>256</y><w>192</w><h>52</h></coordinates><panel_attributes>Libro
+-
+-idLibro
+-
+public Libro(String nombre_texto, String autor, boolean disponible, int idLibro)
+public String obtenerInformacion()</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>584</x><y>328</y><w>192</w><h>52</h></coordinates><panel_attributes>Revista
+-
+-idRevista
+-
+public Libro(String nombre_texto, String autor, boolean disponible, int idLibro)
+public String obtenerInformacion()</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>700</x><y>256</y><w>192</w><h>52</h></coordinates><panel_attributes>Tesis
+-
+-idTesis
+-
+public Libro(String nombre_texto, String autor, boolean disponible, int idLibro)
+public String obtenerInformacion()</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>672</x><y>232</y><w>132</w><h>32</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>310;60;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>676</x><y>232</y><w>12</w><h>104</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;240;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>560</x><y>232</y><w>124</w><h>32</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;60;290;10</additional_attributes></element><element><id>UMLClass</id><coordinates><x>0</x><y>256</y><w>192</w><h>52</h></coordinates><panel_attributes>Profesores
+-
+-idProfesor
+-
+public void consultarMaterial(Libro[] libros, Revista[] revistas, Tesis[] tesis)
+public void prestarMaterial(Libro[] libros, Revista[] revistas, Tesis[] tesis)
+public void devolverMaterial(Libro[] libros, Revista[] revistas, Tesis[] tesis)</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>232</x><y>256</y><w>192</w><h>52</h></coordinates><panel_attributes>Estudiantes
+-
+-idProfesor
+-
+public void consultarMaterial(Libro[] libros, Revista[] revistas, Tesis[] tesis)
+public void prestarMaterial(Libro[] libros, Revista[] revistas, Tesis[] tesis)
+public void devolverMaterial(Libro[] libros, Revista[] revistas, Tesis[] tesis)</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>204</x><y>232</y><w>132</w><h>32</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>310;60;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>92</x><y>232</y><w>128</w><h>32</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;60;300;10</additional_attributes></element><element><id>Relation</id><coordinates><x>208</x><y>304</y><w>128</w><h>36</h></coordinates><panel_attributes>lt=&lt;&lt;.</panel_attributes><additional_attributes>10;70;300;10</additional_attributes></element><element><id>Relation</id><coordinates><x>92</x><y>308</y><w>128</w><h>32</h></coordinates><panel_attributes>lt=&lt;&lt;.</panel_attributes><additional_attributes>300;60;10;10</additional_attributes></element></diagram>
